@@ -1,0 +1,33 @@
+<h1 >Registration</h1>
+<div class="log-in-form">
+    <form [formGroup]="userForm">
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" required [(ngModel)]="userModel.name" name="name" formControlName="name" placeholder="Name">
+        <div class="errors">
+          <p *ngIf="userForm.get('name').errors && (userForm.get('name').dirty || userForm.get('name').touched)" >Please enter a valid name</p>
+          <p *ngIf="userForm.get('name').errors?.maxlength">Name should be less then 256 symbols</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="login" required [(ngModel)]="userModel.login" name="login" formControlName="login" placeholder="login">
+        <div class="errors">
+          <p *ngIf="userForm.get('login').errors?.maxlength">Login should be less then 256 symbols</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="password" required [(ngModel)]="userModel.password" name="password" formControlName="password" placeholder="password">
+        <div class="errors">
+          <p *ngIf="userForm.get('password').errors && userForm.get('password').touched">Need symbols, numbers, words in upper and lower case</p>
+          <p *ngIf="userForm.get('password').errors?.maxlength">Password should be less then 256 symbols</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="confirmPassword" required name="confirmPassword" formControlName="confirmPassword" placeholder="confirm password">
+        <div class="errors">
+          <p *ngIf="userForm.get('confirmPassword').errors?.maxlength">Password should be less then 256 symbols</p>
+          <p *ngIf="!checkPasswordConfirmation() && userForm.get('confirmPassword').touched">Passwords must match</p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.valid" (click)="registrate()">Submit</button><br>
+    </form>
+  </div>

@@ -1,0 +1,11 @@
+.menu {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}
+
+.log-out {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}

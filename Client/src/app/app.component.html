@@ -1,0 +1,8 @@
+<div class="menu" *ngIf="!isLoggedIn()">
+    <a href="/account/logIn">Log In</a>
+    <a href="/account/registration" style="margin-left: 20px;">Registration</a>
+</div>
+<div class="log-out" *ngIf="isLoggedIn()">
+    <a (click)="logOut()" href="">Log Out</a>
+</div>
+<router-outlet></router-outlet>

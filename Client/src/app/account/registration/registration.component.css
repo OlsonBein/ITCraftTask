@@ -1,0 +1,19 @@
+.log-in-form {
+  width: 400px;
+  margin-left: 40%;
+}
+
+.errors {
+  color: red;
+  font-size: small;
+}
+
+h1 {
+  margin-top:50px;
+  margin-left: 47%;
+}
+
+button {
+  margin-left: 25%;
+  width: 50%;
+}
